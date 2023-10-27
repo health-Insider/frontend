@@ -8,8 +8,8 @@ import './tailwind.css';
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
         <NextUIProvider>
-            <main className='dark text-foreground bg-background height-max'>
-            <App/>
+            <main className="dark text-foreground bg-background height-max">
+                <App />
             </main>
         </NextUIProvider>
     </React.StrictMode>
