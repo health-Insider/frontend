@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-#root{
-    width: 100vmax;
+#demnroots{
     height: auto;
     min-height: 100vh;
     max-width: none;
@@ -19,3 +18,22 @@ h1{
     font-size: xx-large;
 }
 
+#stats{
+    width: 70%;
+}
+
+#profile{
+    width: 30%;
+}
+
+#uicon{
+    aspect-ratio: 1/1;
+    width: 50%;
+    margin: auto;
+}
+
+#main{
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+}
