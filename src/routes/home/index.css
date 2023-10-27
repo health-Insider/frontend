@@ -1,0 +1,10 @@
+#box {
+    margin: 1rem;
+    border-radius: 1rem;
+    font-size: 60px;
+    font-stretch: expanded;
+}
+
+body{
+    background-color: black;
+}

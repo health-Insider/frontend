@@ -2,12 +2,21 @@ import { nextui } from '@nextui-org/react';
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.{html,js,tsx,jsx,ts}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        'sea-green': '#51b788',
+        'kelp-green': '#2e6a50',
+        'baby-blue': '#91e0ef',
+        'dark-turquoise': '#023e8a'
+      }
+    },
   },
   plugins: [nextui()],
-  darkMode: "class",
-
+  darkMode: "class"
 }
-
