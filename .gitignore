@@ -25,3 +25,4 @@ dist-ssr
 
 .yarn/
 node_modules/
+vite.config.ts.timestamp*
