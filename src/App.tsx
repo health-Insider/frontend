@@ -1,11 +1,12 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-import './App.css';
+// import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './routes/home';
 import Login from './routes/login';
 import Dash from './routes/dash';
+import Signup from './routes/signup';
 
 function App() {
     // const [count, setCount] = useState(0)
@@ -16,6 +17,7 @@ function App() {
                 <Routes>
                     <Route path="/" Component={Home} />
                     <Route path="/login" Component={Login} />
+                    <Route path="/signup" Component={Signup} />
                     <Route path="/dashboard" Component={Dash} />
                 </Routes>
             </BrowserRouter>
