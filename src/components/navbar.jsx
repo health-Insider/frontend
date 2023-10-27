@@ -1,9 +1,11 @@
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button} from "@nextui-org/react";
+import {Logo} from "./logo.jsx"
 
 export default function App() {
   return (
     <Navbar isBordered>
       <NavbarBrand>
+        <Logo/>
         <p className="font-bold text-inherit">Health Insighter</p>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">

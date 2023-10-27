@@ -1,27 +1,33 @@
 import Nav from '../../components/navbar.jsx'
+import Tab from '../../components/aboutTabs.jsx'
 import './index.css'
 import { Divider } from '@nextui-org/react'
+import { Image } from '@nextui-org/react'
+import heroImg from '/hero-main.jpg'
 
 export default function Home() {
     return (
         <>
             <Nav/>
-            <div className="flex min-h-screen max-h-screen -mt-12 rounded-lg 
-                            bg-gradient-to-r from-kelp-green to-black" 
+            <div className="flex min-h-screen max-h-screen -mt-[5vmax] rounded-lg 
+                            bg-gradient-to-r from-kelp-green to-black items-center" 
                  id="hero-image">
-                <div className='flex self-center min-h-[40vh] max-w-[80vh] mx-[12vh] items-center p-10 justify-center' id = "box">
-                    <h1 className='text-left font-semibold'>Healthcare that adjusts to you</h1>
+                <div className='flex self-center min-h-[30vmax] max-w-[40vmax] mx-[8vmax] items-center p-10 justify-center' id = "box">
+                    <h1 className='text-left font-semibold'>Healthcare that's <span className='bg-gradient-to-r from-baby-blue to-blue-400   bg-clip-text text-transparent'>Tailored</span> towards you</h1>
                 </div>
-                <div className='flex self-center min-h-[40vh] max-w-[80vh] mx-[12vh]'>
+                <div className='flex place-self-center mr-0 mx-[6vmax]'>
+                    <Image isBlurred
+                           alt = "NextUI hero Image"
+                           src = {heroImg}
+                           className='h-[30vmax] w-[45vmax]'
+                    />
                 </div>
             </div>
-            <div className='flex-1 p-5 text-white' id='body'>
-                <h3 className='font-bold text-[35px] my-2'>What we do</h3>
-                <Divider className="my-6"/>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at orci in nisi interdum sollicitudin. Etiam lobortis luctus nisl fringilla faucibus. Pellentesque fringilla, lacus ut tempus fringilla, urna massa ullamcorper nulla, vitae finibus ligula eros in libero. Nullam id quam hendrerit enim pretium consectetur quis id lectus. Duis eu enim et ex laoreet placerat eu ut orci. Nam ex urna, porttitor sed orci nec, venenatis vehicula tellus. Mauris a neque egestas, viverra ex vel, mollis nisi. Donec sed aliquam lacus. Donec sed est sodales, elementum odio eget, vulputate odio. Fusce lacus lectus, sollicitudin quis dignissim ac, sollicitudin tempus orci. Phasellus viverra elementum ante ut pellentesque. Donec molestie diam at lacus hendrerit dignissim. Duis cursus dolor ac erat gravida, et ultrices ligula vehicula.
-                </p>
+            <div className='flex-1 p-[5%]' id='body'>
+                <Tab/>
             </div>
+            <Divider/>
+            <footer className="mt-3 pb-4 text-center">Made by team BYTEOVERFLOW</footer>
         </>
     )
 }
