@@ -27,3 +27,5 @@ dist-ssr
 node_modules/
 vite.config.ts.timestamp*
 yarn.lock
+.env
+.vercel

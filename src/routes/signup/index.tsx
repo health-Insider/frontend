@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -12,35 +11,13 @@ import {
     Spinner,
 } from '@nextui-org/react';
 import { useState } from 'react';
-// import { Link } from 'react-router-dom';
 
-export default function Login() {
+export default function Signup() {
     const login = () => {
         setLock(true);
         // @ts-ignore
         setButtontext(<Spinner size="md" color="white" />);
         setButtoncolor('warning');
-
-        fetch('/api/auth/login', {
-            body: JSON.stringify({ username: email, password }),
-        })
-            .then((r) => r.json())
-            .then(
-                (r: {
-                    error: boolean;
-                    message: string;
-                    data: { token: string };
-                }) => {
-                    if (r.error) {
-                        setButtoncolor('danger');
-                        setButtontext(
-                            // @ts-ignore
-                            <FontAwesomeIcon icon={faXmark} size="2x" />
-                        );
-                        // setModalData()
-                    }
-                }
-            );
         setTimeout(() => {
             setButtoncolor('success');
             // @ts-ignore
@@ -52,17 +29,40 @@ export default function Login() {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     const [lock, setLock] = useState(false);
-    const [buttontext, setButtontext] = useState('LOGIN');
+    const [fname, setFname] = useState();
+    const [lname, setLname] = useState();
+    const [buttontext, setButtontext] = useState('SIGNUP');
     const [buttoncolor, setButtoncolor] = useState('primary');
-    const [modalData, setModalData] = useState();
 
     return (
         <div className="justify-center flex items-center h-[100vh] bg-gradient-to-r from-blue-500 to-transparent">
-            <Card className="w-[40%] h-[35%]">
+            <Card className="w-[40%] h-[42%]">
                 <CardHeader className="text-center justify-center font-extrabold text-2xl p-5">
                     Login Portal
                 </CardHeader>
                 <CardBody className="p-5">
+                    <div className="grid grid-cols-2 grid-rows-1">
+                        <Input
+                            required
+                            type="email"
+                            isDisabled={lock}
+                            placeholder="First Name"
+                            value={fname}
+                            // @ts-ignore
+                            onValueChange={setFname}
+                            className="pb-5 pr-2 flex"
+                        />
+                        <Input
+                            required
+                            type="email"
+                            isDisabled={lock}
+                            placeholder="Last Name"
+                            value={lname}
+                            // @ts-ignore
+                            onValueChange={setLname}
+                            className="pb-5 pl-2 flex"
+                        />
+                    </div>
                     <Input
                         required
                         type="email"
@@ -89,11 +89,11 @@ export default function Login() {
                         color={buttoncolor}
                         onClick={login}
                     />
-                    <div className="pt-5 justify-center">
-                        Don't have an account? Signup{' '}
-                        <Link href="/signup">here.</Link>
-                    </div>
                 </CardBody>
+                <div className="pb-7 justify-center text-center">
+                    Already have an account? Login{' '}
+                    <Link href="/signup">here.</Link>
+                </div>
             </Card>
         </div>
     );
