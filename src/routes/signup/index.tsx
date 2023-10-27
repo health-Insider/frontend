@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -6,6 +7,7 @@ import {
     CardBody,
     CardHeader,
     Input,
+    Link,
     Spinner,
 } from '@nextui-org/react';
 import { useState } from 'react';
@@ -13,10 +15,12 @@ import { useState } from 'react';
 export default function Signup() {
     const login = () => {
         setLock(true);
+        // @ts-ignore
         setButtontext(<Spinner size="md" color="white" />);
         setButtoncolor('warning');
         setTimeout(() => {
             setButtoncolor('success');
+            // @ts-ignore
             setButtontext(<FontAwesomeIcon icon={faCheck} size="2x" />);
         }, 2000);
         // Process login
@@ -32,7 +36,7 @@ export default function Signup() {
 
     return (
         <div className="justify-center flex items-center h-[100vh] bg-gradient-to-r from-blue-500 to-transparent">
-            <Card className="w-[40%] h-[40%]">
+            <Card className="w-[40%] h-[42%]">
                 <CardHeader className="text-center justify-center font-extrabold text-2xl p-5">
                     Login Portal
                 </CardHeader>
@@ -44,6 +48,7 @@ export default function Signup() {
                             isDisabled={lock}
                             placeholder="First Name"
                             value={fname}
+                            // @ts-ignore
                             onValueChange={setFname}
                             className="pb-5 pr-2 flex"
                         />
@@ -53,6 +58,7 @@ export default function Signup() {
                             isDisabled={lock}
                             placeholder="Last Name"
                             value={lname}
+                            // @ts-ignore
                             onValueChange={setLname}
                             className="pb-5 pl-2 flex"
                         />
@@ -63,6 +69,7 @@ export default function Signup() {
                         isDisabled={lock}
                         placeholder="Email"
                         value={email}
+                        // @ts-ignore
                         onValueChange={setEmail}
                         className="pb-5"
                     />
@@ -71,16 +78,22 @@ export default function Signup() {
                         type="password"
                         isDisabled={lock}
                         placeholder="Password"
+                        // @ts-ignore
                         onValueChange={setPassword}
                         value={password}
                         className="pb-10"
                     />
                     <Button
                         children={buttontext}
+                        // @ts-ignore
                         color={buttoncolor}
                         onClick={login}
                     />
                 </CardBody>
+                <div className="pb-7 justify-center text-center">
+                    Already have an account? Login{' '}
+                    <Link href="/signup">here.</Link>
+                </div>
             </Card>
         </div>
     );
