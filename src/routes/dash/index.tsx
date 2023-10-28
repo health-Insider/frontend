@@ -1,4 +1,3 @@
-import './index.css'
 // @ts-ignore
 import ProfileCard from '../../components/card.jsx'
 // @ts-ignore

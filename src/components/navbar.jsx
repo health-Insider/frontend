@@ -17,7 +17,7 @@ export default function App() {
             </NavbarBrand>
             <NavbarContent className="hidden sm:flex text-center !justify-center">
                 <NavbarItem>
-                    <Link color="foreground" href="/">
+                    <Link color="foreground" href="/Dashboard">
                         Dashboard 
                     </Link>
                 </NavbarItem>
@@ -27,7 +27,7 @@ export default function App() {
                     </Link>
                 </NavbarItem>
                 <NavbarItem>
-                    <Link color="foreground" href="/statistics">
+                    <Link color="foreground" href="/contact">
                         Contact 
                     </Link>
                 </NavbarItem>
