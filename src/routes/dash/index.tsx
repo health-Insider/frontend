@@ -13,6 +13,12 @@ import Sleep from '../../components/sleepTime.jsx'
 import Chart from 'chart.js/auto';
 
 export default function Dash() {
+
+  // const getData = () => {
+
+  // };
+  // const [data , setData] = useState();
+
     const data = [
         { year: 2010, count: 10 },
         { year: 2011, count: 20 },

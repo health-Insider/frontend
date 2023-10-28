@@ -11,7 +11,7 @@ export default function App() {
             track: "stroke-white/10",
             value: "text-3xl font-semibold text-white",
           }}
-          value={70}
+          value={82}
           strokeWidth={4}
           showValueLabel={true}
         />
@@ -24,7 +24,7 @@ export default function App() {
           }}
           variant="bordered"
         >
-          2800 Steps
+          1450 Calories
         </Chip>
       </CardFooter>
     </Card>

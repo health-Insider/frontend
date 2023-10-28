@@ -11,11 +11,10 @@ import Signup from './routes/signup';
 // @ts-ignore
 import Nav from './components/navbar.jsx'
 import Error from './routes/404'
+import Contact from './routes/contact'
 import { Divider } from '@nextui-org/react';
 
 function App() {
-    // const [count, setCount] = useState(0)
-
     return (
         <>
             <BrowserRouter>
@@ -25,6 +24,7 @@ function App() {
                     <Route path="/login" Component={Login} />
                     <Route path="/signup" Component={Signup} />
                     <Route path="/dashboard" Component={Dash} />
+                    <Route path='/contact' Component={Contact}/>
                     <Route path="*" Component={Error}></Route>
                 </Routes>
             </BrowserRouter>
