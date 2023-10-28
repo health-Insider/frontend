@@ -1,12 +1,9 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
-import db from '../utils/db';
+// import type { VercelRequest, VercelResponse } from '@vercel/node';
+import db from '../utils/db.js';
 
-async function post(
-    request: VercelRequest,
-    response: VercelResponse
-): Promise<VercelResponse> {
+async function post(request, response) {
     const tempBody = request.body;
-    let body: { token: string };
+    let body;
     if (!tempBody)
         return response.status(400).json({
             error: true,
@@ -97,13 +94,10 @@ async function post(
     });
 }
 
-export default async (
-    request: VercelRequest,
-    response: VercelResponse
-): Promise<VercelResponse> => {
+export default async (request, response) => {
     switch (request.method?.toLowerCase()) {
         case 'post':
-            post(request, response);
+            await post(request, response);
             break;
         default:
             return response.status(405).json({

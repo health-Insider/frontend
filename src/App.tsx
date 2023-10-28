@@ -4,9 +4,11 @@
 // import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './routes/home';
+// @ts-ignore
 import Login from './routes/login';
 import Dash from './routes/dash';
 import Signup from './routes/signup';
+// @ts-ignore
 import Nav from './components/navbar.jsx'
 import Error from './routes/404'
 import { Divider } from '@nextui-org/react';

@@ -1,13 +1,9 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
-import db from '../utils/db';
+import db from '../utils/db.js';
 import { randomUUID } from 'crypto';
 
-async function post(
-    request: VercelRequest,
-    response: VercelResponse
-): Promise<VercelResponse> {
+export default async function post(request, response) {
     const tempBody = request.body;
-    let body: { username: string; password: string };
+    // let body;
     if (!tempBody)
         return response.status(400).json({
             error: true,
@@ -15,8 +11,8 @@ async function post(
             data: [],
         });
     try {
-        body = JSON.parse(tempBody);
-        if (!body.password || !body.username)
+        const temp = JSON.parse(tempBody);
+        if (!temp.password || !temp.username)
             return response.status(400).json({
                 error: true,
                 message: 'Malformed request',
@@ -29,7 +25,7 @@ async function post(
             data: [],
         });
     }
-
+    const body = JSON.parse(tempBody)
     const userinfo = await db.auth.findFirst({
         where: { email: body.username.toLowerCase() },
         select: {
@@ -63,7 +59,7 @@ async function post(
         });
 
         return response.status(201).json({
-            error: true,
+            error: false,
             message: '',
             data: { token },
         });
@@ -74,22 +70,19 @@ async function post(
     });
 }
 
-export default async (
-    request: VercelRequest,
-    response: VercelResponse
-): Promise<VercelResponse> => {
-    switch (request.method?.toLowerCase()) {
-        case 'post':
-            post(request, response);
-            break;
-        default:
-            return response.status(405).json({
-                error: true,
-                message: `This endpoint does not allow "${request.method}" requests.`,
-                data: [],
-            });
-    }
-    return response
-        .status(500)
-        .json({ error: true, message: 'An error occured.' });
-};
+// export default async (request, response) => {
+//     switch (request.method?.toLowerCase()) {
+//         case 'post':
+//             await post(request, response);
+//             break;
+//         default:
+//             return response.status(405).json({
+//                 error: true,
+//                 message: `This endpoint does not allow "${request.method}" requests.`,
+//                 data: [],
+//             });
+//     }
+//     return response
+//         .status(500)
+//         .json({ error: true, message: 'An error occured.' });
+// };

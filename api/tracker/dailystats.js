@@ -1,12 +1,7 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
+import db from '../utils/db.js';
+import checkAuth from '../utils/checkAuth.js';
 
-import db from '../utils/db';
-import checkAuth from '../utils/checkAuth';
-
-async function get(
-    request: VercelRequest,
-    response: VercelResponse
-): Promise<VercelResponse> {
+export default async function get(request, response) {
     const token = request.headers.authorization;
     if (!token)
         return response.status(403).json({
@@ -42,22 +37,22 @@ async function get(
     });
 }
 
-export default async (
-    request: VercelRequest,
-    response: VercelResponse
-): Promise<VercelResponse> => {
-    switch (request.method?.toLowerCase()) {
-        case 'get':
-            get(request, response);
-            break;
-        default:
-            return response.status(405).json({
-                error: true,
-                message: `This endpoint does not allow "${request.method}" requests.`,
-                data: [],
-            });
-    }
-    return response
-        .status(500)
-        .json({ error: true, message: 'An error occured.' });
-};
+// export default async (
+//     request,
+//     response
+// ) => {
+//     switch (request.method?.toLowerCase()) {
+//         case 'get':
+//             get(request, response);
+//             break;
+//         default:
+//             return response.status(405).json({
+//                 error: true,
+//                 message: `This endpoint does not allow "${request.method}" requests.`,
+//                 data: [],
+//             });
+//     }
+//     return response
+//         .status(500)
+//         .json({ error: true, message: 'An error occured.' });
+// };

@@ -1,3 +1,4 @@
+// @ts-ignore
 import Tab from '../../components/aboutTabs.jsx'
 import './index.css'
 import { Image } from '@nextui-org/react'
