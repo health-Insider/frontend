@@ -42,7 +42,7 @@ export default function Login() {
                         // setModalData(
                         return;
                     }
-                    localStorage.setItem('token', r.data.token.uuid.toString());
+                    localStorage.setItem('token', r.data.token.toString()/*r.data.token.uuid.toString()*/);
                     setButtoncolor('success');
                     // @ts-ignore
                     setButtontext(<FontAwesomeIcon icon={faCheck} size="2x" />);
