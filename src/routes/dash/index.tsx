@@ -1,11 +1,47 @@
 import './index.css'
 import {CircularProgress, Card, CardBody, CardFooter, Chip} from "@nextui-org/react";
+import Chart from 'chart.js/auto';
 
 
 export default function Dash() {
+    const data = [
+    { year: 2010, count: 10 },
+    { year: 2011, count: 20 },
+    { year: 2012, count: 15 },
+    { year: 2013, count: 25 },
+    { year: 2014, count: 22 },
+    { year: 2015, count: 30 },
+    { year: 2016, count: 28 },
+  ];
     
+    window.onload = () => {
+        console.log("e")
+    try{
+        console.log("trying")
+        
+        new Chart(
+            document.getElementById('acquisitions'),
+            {
+              type: 'line',
+              data: {
+                labels: data.map(row => row.year),
+                datasets: [
+                  {
+                    label: 'Acquisitions by year',
+                    data: data.map(row => row.count)
+                  }
+                ]
+              }
+            }
+          );
+    }
+    catch{
+        //give up
+    }
+}
     return (
         <>
+        
             <div id="app">
                 <h1>Dashboard</h1>
                 <Card className="w-[240px] h-[240px] border-none bg-gradient-to-br from-violet-500 to-fuchsia-500">
@@ -35,6 +71,11 @@ export default function Dash() {
                     </CardFooter>
                 </Card>
             </div>
+
+            <canvas id="acquisitions"></canvas>
+
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js" integrity="sha512-7U4rRB8aGAHGVad3u2jiC7GA5/1YhQcQjxKeaVms/bT66i3LVBMRcBI9KwABNWnxOSwulkuSXxZLGuyfvo7V1A==" ></script>
         </>
     )
 }
