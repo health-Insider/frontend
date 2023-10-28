@@ -14,7 +14,8 @@ export default {
         'kelp-green': '#2e6a50',
         'baby-blue': '#91e0ef',
         'dark-turquoise': '#023e8a',
-        'royal-blue': '#120e3d'
+        'royal-blue': '#120e3d',
+        'lime-green': '#4ade80'
       }
     },
   },
