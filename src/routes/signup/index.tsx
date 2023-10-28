@@ -35,8 +35,8 @@ export default function Signup() {
     const [buttoncolor, setButtoncolor] = useState('primary');
 
     return (
-        <div className="justify-center flex items-center h-[100vh] bg-gradient-to-r from-blue-500 to-transparent">
-            <Card className="w-[40%] h-[42%]">
+        <div className="justify-center flex items-center h-[90vh] bg-gradient-to-r from-blue-500 to-transparent">
+            <Card className="min-w-[40%] min-h-[42%]">
                 <CardHeader className="text-center justify-center font-extrabold text-2xl p-5">
                     Login Portal
                 </CardHeader>

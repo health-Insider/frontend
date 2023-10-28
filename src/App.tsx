@@ -7,12 +7,16 @@ import Home from './routes/home';
 import Login from './routes/login';
 import Dash from './routes/dash';
 import Signup from './routes/signup';
+import Nav from './components/navbar.jsx'
+import { Divider } from '@nextui-org/react';
 
 function App() {
     // const [count, setCount] = useState(0)
 
     return (
+        <>
             <BrowserRouter>
+                <Nav />
                 <Routes>
                     <Route path="/" Component={Home} />
                     <Route path="/login" Component={Login} />
@@ -20,6 +24,9 @@ function App() {
                     <Route path="/dashboard" Component={Dash} />
                 </Routes>
             </BrowserRouter>
+            <Divider/>
+            <footer className="mt-3 pb-4 text-center">Made by team BYTEOVERFLOW</footer>
+        </>
     );
 }
 

@@ -54,11 +54,10 @@ export default function Login() {
     const [lock, setLock] = useState(false);
     const [buttontext, setButtontext] = useState('LOGIN');
     const [buttoncolor, setButtoncolor] = useState('primary');
-    const [modalData, setModalData] = useState();
 
     return (
-        <div className="justify-center flex items-center h-[100vh] bg-gradient-to-r from-blue-500 to-transparent">
-            <Card className="w-[40%] h-[35%]">
+        <div className="justify-center flex items-center h-[50vmax] bg-gradient-to-r from-blue-500 to-transparent">
+            <Card className="min-w-[40%] h-max-[35%]">
                 <CardHeader className="text-center justify-center font-extrabold text-2xl p-5">
                     Login Portal
                 </CardHeader>
