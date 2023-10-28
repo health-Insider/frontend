@@ -16,7 +16,7 @@ export default function Dash() {
     
     window.onload = () => {
     try{
-        new Chart(
+        var chart = new Chart(
             document.getElementById('acquisitions'),
             {
               type: 'line',
@@ -35,6 +35,10 @@ export default function Dash() {
               }
             }
           );
+
+          chart.canvas.style.width = toString(window.innerWidth/2)
+
+          
     }
     catch{
         //give up
@@ -73,8 +77,7 @@ export default function Dash() {
                 </Card>
             </div>
 
-            <canvas id="acquisitions" className='w-1/2'></canvas>
-
+            <canvas id="acquisitions" className='charts'></canvas>
 
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js" integrity="sha512-7U4rRB8aGAHGVad3u2jiC7GA5/1YhQcQjxKeaVms/bT66i3LVBMRcBI9KwABNWnxOSwulkuSXxZLGuyfvo7V1A==" ></script>
         </>
