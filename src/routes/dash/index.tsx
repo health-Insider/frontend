@@ -15,10 +15,7 @@ export default function Dash() {
   ];
     
     window.onload = () => {
-        console.log("e")
     try{
-        console.log("trying")
-        
         new Chart(
             document.getElementById('acquisitions'),
             {
@@ -28,9 +25,13 @@ export default function Dash() {
                 datasets: [
                   {
                     label: 'Acquisitions by year',
-                    data: data.map(row => row.count)
+                    data: data.map(row => row.count),
+                    borderColor:"#ffffff"
                   }
                 ]
+              },
+              options:{
+                responsive:true
               }
             }
           );
@@ -72,7 +73,7 @@ export default function Dash() {
                 </Card>
             </div>
 
-            <canvas id="acquisitions"></canvas>
+            <canvas id="acquisitions" className='w-1/2'></canvas>
 
 
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js" integrity="sha512-7U4rRB8aGAHGVad3u2jiC7GA5/1YhQcQjxKeaVms/bT66i3LVBMRcBI9KwABNWnxOSwulkuSXxZLGuyfvo7V1A==" ></script>
