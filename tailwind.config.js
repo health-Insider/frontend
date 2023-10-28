@@ -13,7 +13,8 @@ export default {
         'sea-green': '#51b788',
         'kelp-green': '#2e6a50',
         'baby-blue': '#91e0ef',
-        'dark-turquoise': '#023e8a'
+        'dark-turquoise': '#023e8a',
+        'royal-blue': '#120e3d'
       }
     },
   },

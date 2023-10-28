@@ -1,39 +1,34 @@
 import './index.css'
-import {CircularProgress, Card, CardBody, CardFooter, Chip} from "@nextui-org/react";
-
+// @ts-ignore
+import ProfileCard from '../../components/card.jsx'
+// @ts-ignore
+import StepsCard from '../../components/stepsCard.jsx'
+// @ts-ignore
+import CalorieIntake from '../../components/calorieIntake.jsx'
+// @ts-ignore
+import CalorieConsumption from '../../components/calorieConsumption.jsx'
+//@ts-ignore
+import Sleep from '../../components/sleepTime.jsx'
 
 export default function Dash() {
-    
     return (
         <>
-            <div id="app">
-                <h1>Dashboard</h1>
-                <Card className="w-[240px] h-[240px] border-none bg-gradient-to-br from-violet-500 to-fuchsia-500">
-                    <CardBody className="justify-center items-center pb-0">
-                        <CircularProgress
-                            classNames={{
-                                svg: "w-36 h-36 drop-shadow-md",
-                                indicator: "stroke-white",
-                                track: "stroke-white/10",
-                                value: "text-3xl font-semibold text-white",
-                            }}
-                            value={70}
-                            strokeWidth={4}
-                            showValueLabel={true}
-                        />
-                    </CardBody>
-                    <CardFooter className="justify-center items-center pt-0">
-                        <Chip
-                            classNames={{
-                                base: "border-1 border-white/30",
-                                content: "text-white/90 text-small font-semibold",
-                            }}
-                            variant="bordered"
-                        >
-                            2800 Data points
-                        </Chip>
-                    </CardFooter>
-                </Card>
+            <div className="grid grid-rows-2 grid-cols-3 min-h-screen max-h-screen rounded-lg bg-gradient-to-r from-royal-blue to-black items-center" id="hero-image">
+                <div className = "col-start-1 row-span-2 m-[10vh]">
+                    <ProfileCard/>
+                </div>
+                <div className = "col-start-2 row-start-1"> 
+                    <StepsCard/>
+                </div>
+                <div className = "col-start-2 row-start-2">
+                    <CalorieConsumption/>
+                </div>
+                <div className = "col-start-3 row-start-1">
+                    <CalorieIntake/>
+                </div>
+                <div className = "col-start-3 row-start-2">
+                    <Sleep/>
+                </div>
             </div>
         </>
     )
