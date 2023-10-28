@@ -37,7 +37,7 @@ export default async function post(request, response) {
             email: body.username.toLowerCase(),
             password: body.password,
             first_name: body.firstName,
-            last_name: body.last_name,
+            last_name: body.lastName,
             age: body.age,
         },
     });

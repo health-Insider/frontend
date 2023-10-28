@@ -12,7 +12,6 @@ import {
     Spinner,
 } from '@nextui-org/react';
 import { useState } from 'react';
-import { redirect } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 
 export default function Login() {

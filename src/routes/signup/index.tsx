@@ -75,7 +75,7 @@ export default function Signup() {
                     <div className="grid grid-cols-2 grid-rows-1">
                         <Input
                             required
-                            type="email"
+                            type="text"
                             isDisabled={lock}
                             placeholder="First Name"
                             value={fname}
@@ -85,7 +85,7 @@ export default function Signup() {
                         />
                         <Input
                             required
-                            type="email"
+                            type="text"
                             isDisabled={lock}
                             placeholder="Last Name"
                             value={lname}
