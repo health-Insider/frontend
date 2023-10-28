@@ -8,6 +8,7 @@ import Login from './routes/login';
 import Dash from './routes/dash';
 import Signup from './routes/signup';
 import Nav from './components/navbar.jsx'
+import Error from './routes/404'
 import { Divider } from '@nextui-org/react';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
                     <Route path="/login" Component={Login} />
                     <Route path="/signup" Component={Signup} />
                     <Route path="/dashboard" Component={Dash} />
+                    <Route path="*" Component={Error}></Route>
                 </Routes>
             </BrowserRouter>
             <Divider/>
