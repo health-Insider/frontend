@@ -10,15 +10,15 @@ import { Logo } from './logo.jsx';
 
 export default function App() {
     return (
-        <Navbar isBordered>
+        <Navbar isBordered maxWidth='full'>
             <NavbarBrand>
                 <Logo />
                 <p className="font-bold text-inherit mx-3">Health Insighter</p>
             </NavbarBrand>
-            <NavbarContent className="hidden sm:flex gap-4 justify-center">
+            <NavbarContent className="hidden sm:flex text-center !justify-center">
                 <NavbarItem>
                     <Link color="foreground" href="/">
-                        Features
+                        Dashboard 
                     </Link>
                 </NavbarItem>
                 <NavbarItem isActive>
@@ -28,7 +28,7 @@ export default function App() {
                 </NavbarItem>
                 <NavbarItem>
                     <Link color="foreground" href="/statistics">
-                        Statistics
+                        Contact 
                     </Link>
                 </NavbarItem>
             </NavbarContent>
