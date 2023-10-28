@@ -8,7 +8,6 @@ import CalorieIntake from '../../components/calorieIntake.jsx'
 import CalorieConsumption from '../../components/calorieConsumption.jsx'
 //@ts-ignore
 import Sleep from '../../components/sleepTime.jsx'
-
 import Chart from 'chart.js/auto';
 
 export default function Dash() {

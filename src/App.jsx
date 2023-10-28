@@ -1,17 +1,13 @@
-// import { useState } from 'react';
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './routes/home';
 // @ts-ignore
 import Login from './routes/login';
-import Dash from './routes/dash';
+import Dash from './routes/dash/index.jsx';
 import Signup from './routes/signup';
 // @ts-ignore
 import Nav from './components/navbar.jsx'
-import Error from './routes/404'
-import Contact from './routes/contact'
+import Error from './routes/404/index.jsx'
+import Contact from './routes/contact/index.jsx'
 import { Divider } from '@nextui-org/react';
 
 function App() {
