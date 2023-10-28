@@ -65,6 +65,8 @@ export default function Signup() {
     const [buttontext, setButtontext] = useState('SIGNUP');
     const [buttoncolor, setButtoncolor] = useState('primary');
 
+    if (localStorage.getItem('token')) window.location.href = '/dashboard';
+
     return (
         <div className="justify-center flex items-center h-[90vh] bg-gradient-to-r from-blue-500 to-transparent">
             <Card className="min-w-[40%] min-h-[42%]">

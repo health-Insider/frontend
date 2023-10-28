@@ -66,6 +66,8 @@ export default function Login() {
     const [buttontext, setButtontext] = useState('LOGIN');
     const [buttoncolor, setButtoncolor] = useState('primary');
 
+    if (localStorage.getItem('token')) window.location.href = '/dashboard';
+
     return (
         <div className="justify-center flex items-center h-[50vmax] bg-gradient-to-r from-blue-500 to-transparent">
             <Card className="min-w-[40%] h-max-[35%]">

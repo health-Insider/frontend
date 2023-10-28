@@ -1,14 +1,13 @@
-import './index.css'
 // @ts-ignore
-import ProfileCard from '../../components/card.jsx'
+import ProfileCard from '../../components/card.jsx';
 // @ts-ignore
-import StepsCard from '../../components/stepsCard.jsx'
+import StepsCard from '../../components/stepsCard.jsx';
 // @ts-ignore
-import CalorieIntake from '../../components/calorieIntake.jsx'
+import CalorieIntake from '../../components/calorieIntake.jsx';
 // @ts-ignore
-import CalorieConsumption from '../../components/calorieConsumption.jsx'
+import CalorieConsumption from '../../components/calorieConsumption.jsx';
 //@ts-ignore
-import Sleep from '../../components/sleepTime.jsx'
+import Sleep from '../../components/sleepTime.jsx';
 
 import Chart from 'chart.js/auto';
 
@@ -87,24 +86,29 @@ export default function Dash() {
         catch{
             //give up
         }
+    if (!localStorage.getItem('token')) {
+        window.location.href = '/login';
     }
     return (
         <>
-            <div className="grid grid-rows-2 grid-cols-3 min-h-screen max-h-screen rounded-lg bg-gradient-to-r from-royal-blue to-black items-center" id="hero-image">
-                <div className = "col-start-1 row-span-2 m-[10vh]">
-                    <ProfileCard/>
+            <div
+                className="grid grid-rows-2 grid-cols-3 min-h-screen max-h-screen rounded-lg bg-gradient-to-r from-royal-blue to-black items-center"
+                id="hero-image"
+            >
+                <div className="col-start-1 row-span-2 m-[10vh]">
+                    <ProfileCard />
                 </div>
-                <div className = "col-start-2 row-start-1"> 
-                    <StepsCard/>
+                <div className="col-start-2 row-start-1">
+                    <StepsCard />
                 </div>
-                <div className = "col-start-2 row-start-2">
-                    <CalorieConsumption/>
+                <div className="col-start-2 row-start-2">
+                    <CalorieConsumption />
                 </div>
-                <div className = "col-start-3 row-start-1">
-                    <CalorieIntake/>
+                <div className="col-start-3 row-start-1">
+                    <CalorieIntake />
                 </div>
-                <div className = "col-start-3 row-start-2">
-                    <Sleep/>
+                <div className="col-start-3 row-start-2">
+                    <Sleep />
                 </div>
             </div>
             

@@ -1,7 +1,7 @@
 // import type { VercelRequest, VercelResponse } from '@vercel/node';
 import db from '../utils/db.js';
 
-async function post(request, response) {
+export default async function post(request, response) {
     const tempBody = request.body;
     let body;
     if (!tempBody)
@@ -94,19 +94,19 @@ async function post(request, response) {
     });
 }
 
-export default async (request, response) => {
-    switch (request.method?.toLowerCase()) {
-        case 'post':
-            await post(request, response);
-            break;
-        default:
-            return response.status(405).json({
-                error: true,
-                message: `This endpoint does not allow "${request.method}" requests.`,
-                data: [],
-            });
-    }
-    return response
-        .status(500)
-        .json({ error: true, message: 'An error occured.' });
-};
+// export default async (request, response) => {
+//     switch (request.method?.toLowerCase()) {
+//         case 'post':
+//             await post(request, response);
+//             break;
+//         default:
+//             return response.status(405).json({
+//                 error: true,
+//                 message: `This endpoint does not allow "${request.method}" requests.`,
+//                 data: [],
+//             });
+//     }
+//     return response
+//         .status(500)
+//         .json({ error: true, message: 'An error occured.' });
+// };
