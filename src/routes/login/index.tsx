@@ -23,6 +23,7 @@ export default function Login() {
 
         fetch('/api/auth/login', {
             body: JSON.stringify({ username: email, password }),
+            method: 'POST',
         })
             .then((r) => r.json())
             .then(
@@ -37,15 +38,25 @@ export default function Login() {
                             // @ts-ignore
                             <FontAwesomeIcon icon={faXmark} size="2x" />
                         );
-                        // setModalData()
+                        setTimeout(() => setButtontext('SIGNUP'), 1000);
+                        // setModalData(
+                        return;
                     }
+                    localStorage.setItem('token', r.data.token.uuid.toString());
+                    setButtoncolor('success');
+                    // @ts-ignore
+                    setButtontext(<FontAwesomeIcon icon={faCheck} size="2x" />);
+                    setTimeout(() => {
+                        window.location.href = '/dashboard';
+                    }, 1000);
+                    setLock(false);
                 }
             );
-        setTimeout(() => {
-            setButtoncolor('success');
-            // @ts-ignore
-            setButtontext(<FontAwesomeIcon icon={faCheck} size="2x" />);
-        }, 2000);
+        // setTimeout(() => {
+        //     setButtoncolor('success');
+        //     // @ts-ignore
+        //     setButtontext(<FontAwesomeIcon icon={faCheck} size="2x" />);
+        // }, 2000);
         // Process login
     };
 

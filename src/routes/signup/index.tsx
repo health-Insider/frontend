@@ -18,12 +18,43 @@ export default function Signup() {
         // @ts-ignore
         setButtontext(<Spinner size="md" color="white" />);
         setButtoncolor('warning');
-        setTimeout(() => {
-            setButtoncolor('success');
-            // @ts-ignore
-            setButtontext(<FontAwesomeIcon icon={faCheck} size="2x" />);
-        }, 2000);
-        // Process login
+
+        fetch('/api/auth/signup', {
+            body: JSON.stringify({
+                username: email,
+                password,
+                firstName: fname,
+                lastName: lname,
+            }),
+            method: 'POST',
+        })
+            .then((r) => r.json())
+            .then(
+                (r: {
+                    error: boolean;
+                    message: string;
+                    data: { token: { uuid: string } };
+                }) => {
+                    if (r.error) {
+                        setButtoncolor('danger');
+                        setButtontext(
+                            // @ts-ignore
+                            <FontAwesomeIcon icon={faXmark} size="2x" />
+                        );
+                        setTimeout(() => setButtontext('SIGNUP'), 1000);
+                        // setModalData(
+                        return;
+                    }
+                    localStorage.setItem('token', r.data.token.uuid.toString());
+                    setButtoncolor('success');
+                    // @ts-ignore
+                    setButtontext(<FontAwesomeIcon icon={faCheck} size="2x" />);
+                    setTimeout(() => {
+                        window.location.href = '/dashboard';
+                    }, 1000);
+                }
+            );
+        setLock(false);
     };
 
     const [email, setEmail] = useState();
@@ -44,7 +75,7 @@ export default function Signup() {
                     <div className="grid grid-cols-2 grid-rows-1">
                         <Input
                             required
-                            type="email"
+                            type="text"
                             isDisabled={lock}
                             placeholder="First Name"
                             value={fname}
@@ -54,7 +85,7 @@ export default function Signup() {
                         />
                         <Input
                             required
-                            type="email"
+                            type="text"
                             isDisabled={lock}
                             placeholder="Last Name"
                             value={lname}

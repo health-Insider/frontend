@@ -31,5 +31,5 @@ export default function Dash() {
                 </div>
             </div>
         </>
-    )
+    );
 }
