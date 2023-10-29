@@ -2,7 +2,7 @@ import {CircularProgress, Card, CardBody, CardFooter, Chip} from "@nextui-org/re
 
 export default function App() {
   return (
-    <Card className="w-[300px] h-[300px] border-none bg-gradient-to-r from-purple-500 to-pink-500">
+    <Card className="w-[42vh] h-[42vh] border-none bg-gradient-to-r from-purple-500 to-pink-500">
       <CardBody className="justify-center items-center pb-0">
         <CircularProgress
           classNames={{

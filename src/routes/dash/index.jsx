@@ -88,7 +88,7 @@ export default function Dash() {
     }
     return (
         <>
-            <div className="grid grid-rows-2 grid-cols-3 min-h-screen max-h-screen rounded-lg bg-gradient-to-r from-royal-blue to-black items-center" id="hero-image">
+            <div className="grid grid-rows-2 grid-cols-3 min-h-[92vh] max-h-[92vh] rounded-lg bg-gradient-to-r from-royal-blue to-black items-center" id="hero-image">
                 <div className = "col-start-1 row-span-2 m-[10vh]">
                     <ProfileCard/>
                 </div>
